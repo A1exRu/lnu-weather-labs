@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1(class="text-center mt-4") Latest Weather Forecasts
+    .container
+        .row.justify-content-center
+            each cityWeather in weatherData
+                if cityWeather.error
+                    .col-md-6.mb-4
+                        .card.border-danger
+                            .card-body
+                                h5.card-title.text-danger #{cityWeather.city}
+                                p.card-text Error: #{cityWeather.error}
+                else
+                    .col-md-4.mb-4
+                        .card.border-primary
+                            .card-body
+                                h5.card-title.text-primary #{cityWeather.city}
+                                .text-center
+                                    img(src=weatherIcons[cityWeather.description] alt=cityWeather.description class="weather-icon mb-3")
+                                p.card-text Temperature: #{cityWeather.temperature}°C
+                                p.card-text Description: #{cityWeather.description}

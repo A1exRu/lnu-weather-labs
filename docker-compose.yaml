@@ -1,0 +1,57 @@
+services:
+  server:
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+#    volumes:
+#      - ./server:/app
+    networks:
+      weather-network:
+    depends_on:
+      - mongodb # Start the MongoDB container first
+    environment:
+      - NODE_ENV=production
+
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      weather-network:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      weather-network:
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80" # Nginx listens on port 80
+    volumes:
+      - ./nginx:/etc/nginx:ro # Mount custom Nginx configuration
+    depends_on:
+      - server # Ensure Node.js app is running before starting Nginx
+    networks:
+      weather-network:
+
+# Volumes to persist MongoDB data
+volumes:
+  mongodb_data:
+
+networks:
+  weather-network:

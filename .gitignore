@@ -1,0 +1,52 @@
+
+# Node.js dependencies
+node_modules/
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Environment Variables
+.env
+.env.local
+.env.*.local
+# Dependency directories
+bower_components/
+.jspm-packages/
+# Coverage directory for testing tools
+coverage/
+# Dist/build directory
+dist/
+build/
+# IDE-specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# OS-specific files
+.DS_Store
+Thumbs.db
+# Temporary files
+tmp/
+temp/
+*.tmp
+# Generated public folder (for frontend projects)
+public/
+# Lock files (optional, depending on workflow)
+package-lock.json
+yarn.lock
+# TypeScript specific (if applicable)
+*.tsbuildinfo
+# Optional npm cache directory
+.npm/
+# Miscellaneous
+*.pid
+*.seed
+*.log.*
+# Pug and server error debug tools
+*.compiled
+*.map

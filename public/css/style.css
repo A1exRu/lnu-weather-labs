@@ -1,6 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the body fills the entire viewport */
+  display: flex;
+  flex-direction: column; /* Makes the body a flex container */
+}
+
+#content {
+  flex: 1; /* Takes up the remaining space to push the footer to the bottom */
+}
+
+.box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+footer {
+  background-color: #f1f1f1; /* Light background for clarity */
+  text-align: center;
+  padding: 10px 20px;
+  position: relative; /* Ensures footer appears above other content */
 }
 
 a {

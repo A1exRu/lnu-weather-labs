@@ -2,4 +2,24 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p #{title}
+  p
+    | Лабораторні роботи з курсу #{title}.
+  p
+    | Викнов: студент Руденко О.А., група ІПЗ_маг-1
+  p
+    | Використані технології:
+  ul.technologies
+    li
+      strong Node.js
+    li
+      strong Pug
+    li
+      strong MongoDB
+    li
+      strong Docker
+    li
+      strong Nginx
+      | , deployed locally.
+  p
+    a(href="/weather") Перевірити погоду

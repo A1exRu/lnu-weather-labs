@@ -5,7 +5,7 @@ const { getWeatherForCities } = require('../services/weatherService');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Сучасні технології розробки програмних систем' });
 });
 
 /* GET weather data for cities. */

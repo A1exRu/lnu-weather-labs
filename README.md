@@ -1,6 +1,6 @@
 # Weather Application (WeatherApp)
 
-This project is a weather forecasting application built as part of web-oriented systems and technologies coursework. It demonstrates the integration of multiple technologies including **Node.js**, **React**, **MongoDB**, **Docker**, and **Nginx**, deployed locally and on **Heroku**.
+This project is a weather forecasting application built as part of web-oriented systems and technologies coursework. It demonstrates the integration of multiple technologies including **Node.js**, **Pug**, **MongoDB**, **Docker**, and **Nginx**, deployed locally.
 
 ---
 
@@ -46,7 +46,6 @@ This project is a weather forecasting application built as part of web-oriented 
 - **Database**: MongoDB, Mongoose
 - **Containerization**: Docker, Docker Compose
 - **Reverse Proxy**: Nginx
-- **Deployment**: Heroku
 - **Other Tools**: Axios, Nodemon, Serve
 
 ---
